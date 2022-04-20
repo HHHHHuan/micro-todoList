@@ -10,11 +10,12 @@ import (
 * @Date:   2022/4/14 19:21
  */
 
-// InitMiddleware 讲实例存在gin.Keys中
+// InitMiddleware 將实例存在gin.Keys中
 func InitMiddleware(service []interface{}) gin.HandlerFunc{
 	return func(c *gin.Context) {
 		c.Keys=make(map[string]interface{})
 		c.Keys["userService"]=service[0]
+		c.Keys["taskService"]=service[1]
 		c.Next()
 	}
 }

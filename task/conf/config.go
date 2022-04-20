@@ -3,14 +3,9 @@ package conf
 import (
 	"fmt"
 	"gopkg.in/ini.v1"
-	"mq-server/model"
 	"strings"
+	"task/model"
 )
-
-/*
-* @Author: hh
-* @Date:   2022/4/14 20:47
-*/
 
 var (
 	Db         			string
@@ -26,9 +21,8 @@ var (
 	RabbitMQHost string
 	RabbitMQPort string
 )
-// Init 初始化配置项
+
 func Init()  {
-	// 连接数据库
 	file, err := ini.Load("./conf/config.ini")
 	if err != nil {
 		fmt.Println("load ini file failed..")
@@ -61,4 +55,3 @@ func LoadRabbitMQ(file *ini.File) {
 	RabbitMQHost = file.Section("rabbitmq").Key("RabbitMQHost").String()
 	RabbitMQPort = file.Section("rabbitmq").Key("RabbitMQPort").String()
 }
-

@@ -3,6 +3,7 @@ module mq-server
 go 1.17
 
 require (
+	github.com/streadway/amqp v1.0.0
 	gopkg.in/ini.v1 v1.66.4
 	gorm.io/driver/mysql v1.3.3
 	gorm.io/gorm v1.23.4
